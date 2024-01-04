@@ -2,13 +2,13 @@
 
 Package workerpool is a worker pool that can execute tasks concurrently.
 Features:
-  - Can pause the queue and resume without breaking the whole pool.
-  - Can allocate additional workers for priority tasks.
+  - Pause the queue and resume without breaking the whole pool.
+  - Allocate additional workers for priority tasks.
     Those tasks will pass the queue and will be executed immediately if any "priority" worker is available.
-  - Can push tasks with context.
+  - Push tasks with context.
     If the context is timed out or canceled before a worker is available, the task will be discarded.
-  - Can push tasks with context and wait until it's done.
-  - Can Limit the size of the queue.
+  - Push tasks with context and wait until it's done.
+  - Limit the size of the queue.
 
 Also, it has a DangerWait() function that will wait until the queue is empty and all workers are idle.
 It is useful when you have multiple loops in goroutine pushing tasks to the queue, and you don't know when the last task will be pushed to the limited queue.
